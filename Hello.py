@@ -16,6 +16,9 @@ def setup_sidebar():
             "assets/img13.jpg"]
     random_image=random.choice(images)
     st.sidebar.image(random_image)
+    bu=st.sidebar.button("🔁",help="Reset")
+    if bu:
+        st.rerun()
     #bu=st.sidebar.button("Reset", type="primary")
     #if bu:
     #    st.rerun()
@@ -51,22 +54,22 @@ def run():
     # Sample DataFrame with hours worked for each day of the week
   data1 = {
       'Day': ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-      'Hours Worked': [8, 8.5, 7, 9, 6, 4, 5]
+      'Hours Worked': [2, 4, 7, 3, 6, 2, 0]
   }
   df1 = pd.DataFrame(data1)
     # Sample DataFrame with hours worked for each day of the week
   data2 = {
       'Day': ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-      'Hours Worked': [8, 8.5, 7, 9, 3, 4, 0]
+      'Hours Worked': [5, 3.5, 1, 7, 2, 2, 0]
   }
   df2 = pd.DataFrame(data2)
   c1,c2=st.columns([1,1])
   col1=c1.container(border=True)
   col2=c2.container(border=True)
   with col1:
-    setup_chart(df1,languages[2],"2/3 Days","103 days",5,1,300,200)
+    setup_chart(df1,languages[2],"3/5 Days","98 days",6,2,300,200)
   with col2:
-    setup_chart(df2,languages[0],"2/3 Days","103 days",5,1,300,200)
+    setup_chart(df2,languages[0],"4/5 Days","105 days",4,1,300,200)
  
 
 
